@@ -4,11 +4,10 @@
 
 ## Table of Contents
 
-- [About](#about)
 - [Authors](#authors)
+- [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Contributing](../CONTRIBUTING.md)
 
 ## Authors <a name = "authors"></a>
 
@@ -17,7 +16,7 @@
 
 ## About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+This project its about a software that recomends a game to the user based on some questions. This software uses Javascript as the main language, and Express as the framework for the backend.
 
 ## Getting Started <a name = "getting_started"></a>
 
