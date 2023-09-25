@@ -15,6 +15,27 @@ const getGameByName = (name) => {
   return null;
 };
 
-export { getGameByName };
+// Función para recomendar juegos aleatorios para una consola específica
+const getRandomGamesForConsole = (consoleName, count) => {
+  const gamesForConsole = videoGames[consoleName];
+
+  if (!gamesForConsole) {
+    return [];
+  }
+
+  const randomGames = [];
+  const availableGames = [...gamesForConsole];
+
+  while (randomGames.length < count && availableGames.length > 0) {
+    const randomIndex = Math.floor(Math.random() * availableGames.length);
+    const randomGame = availableGames.splice(randomIndex, 1)[0];
+    randomGames.push(randomGame);
+  }
+
+  return randomGames;
+};
+
+export { getGameByName, getRandomGamesForConsole };
+
 
 

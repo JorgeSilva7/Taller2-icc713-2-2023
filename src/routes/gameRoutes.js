@@ -21,4 +21,21 @@ router.get('/game', (req, res) => {
   res.json(game);
 });
 
+//ruta para recomendar juegos aleatorios para una consola
+router.get('/consoles/:consoleName/random_games', (req, res) => {
+  const { consoleName } = req.params;
+  const recommendedGames = getRandomGamesForConsole(consoleName, 2);
+
+  if (recommendedGames.length === 0) {
+    return res.status(404).json({ error: 'Consola no encontrada o sin juegos.' });
+  }
+
+  const response = recommendedGames.map((game) => {
+    const genres = game.genres.join(', '); // Si tiene más de 1 género, los unimos con comas
+    return `${game.name} - ${game.video_console} - ${genres}`;
+  });
+
+  res.json(response);
+});
+
 export default router;
