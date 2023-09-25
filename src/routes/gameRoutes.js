@@ -1,6 +1,6 @@
 // src/routes/gameRoutes.js
 import express from 'express';
-import { getGameByName } from '../controllers/gameController.js'; // Añade la extensión .js
+import { getGameByName, getRandomGamesForConsole } from '../controllers/gameController.js'; // Añade la extensión .js
 
 const router = express.Router();
 
